@@ -98,7 +98,7 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+9 workspace 9 
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
@@ -112,6 +112,18 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# move focused container to workspace
+bindsym $mod+Ctrl+1 exec xbacklight -set 10 
+bindsym $mod+Ctrl+2 exec xbacklight -set 20
+bindsym $mod+Ctrl+3 exec xbacklight -set 30
+bindsym $mod+Ctrl+4 exec xbacklight -set 40
+bindsym $mod+Ctrl+5 exec xbacklight -set 50
+bindsym $mod+Ctrl+6 exec xbacklight -set 60
+bindsym $mod+Ctrl+7 exec xbacklight -set 70
+bindsym $mod+Ctrl+8 exec xbacklight -set 80
+bindsym $mod+Ctrl+9 exec xbacklight -set 100
+bindsym $mod+Ctrl+0 exec xbacklight -set 0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -164,9 +176,10 @@ bindsym $mod+t exec nautilus
 bindsym $mod+Shift+p exec shutdown now
 bindsym $mod+Shift+z exec setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
 bindsym $mod+Shift+Ctrl+r exec reboot
+bindsym $mod+Shift+Ctrl+o exec curl 192.168.1.200/3214
 bindsym $mod+Shift+t exec cvlc ~/radiorostova_all.m3u 
-bindsym $mod+b exec firefox
-bindsym $mod+g exec yandex-browser-beta
+bindsym $mod+b exec yandex-browser-beta
+bindsym $mod+g exec gnome-control-center
 bindsym $mod+u exec amixer set Master 5%+
 bindsym $mod+i exec amixer set Master 5%-
 
@@ -177,7 +190,7 @@ bindsym $mod+i exec amixer set Master 5%-
 
 exec setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
 exec auto-xflux
-exec DISPLAY=:0.0 feh --bg-scale "$(find ~/.w/|shuf -n1)"
+exec feh --bg-scale "$(find ~/.w/|shuf -n1)"
 exec xrandr --output VGA1 --auto --right-of LVDS1
 exec /usr/bin/nm-applet
 exec /usr/bin/volumeicon
