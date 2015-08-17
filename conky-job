@@ -1,0 +1,50 @@
+out_to_x no
+own_window yes
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 1.0
+ 
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+#total_run_times 0
+ 
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+ 
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address. 
+if_up_strictness route
+ 
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left 
+ 
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+ 
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+color1 1abc9c
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+# JSON for i3bar
+[
+{"full_text" : "${mem} / ${memmax} ", "color" : "\#27ae60"},
+{"full_text" : "${swap}", "color" : "\#8e44ad"},
+{"full_text" : "V-${exec amixer get Master -M | egrep -o '[0-9]{2,3}%' | head -1}","color" : "\#d5e0cc"},
+{"full_text" : "${exec uptime -p}", "color" : "\#8cc7d1"},
+{"full_text" : "${exec echo '' }", "color" : "\#16a085" },
+{"full_text" : "${downspeed enp2s0}", "color" : "\#27ae60"},
+{"full_text" : "${upspeed enp2s0}", "color" : "\#ffffff"},
+{"full_text" : "${totaldown enp2s0}", "color" : "\#ffffff"},
+{"full_text" : "${exec sh ~/.i3/layouts}", "color" : "\#8e44ad"},
+{"full_text" : "${exec date '+ %H:%M:%S' }" , "color" : "\#27ae60"},
+{"full_text" : "${exec date '+ %d.%m' }" },
+{"full_text" : "${exec echo '' }" }
+],
