@@ -159,11 +159,11 @@ hide_edge_borders none
 #my bindsym
 #program
 bindsym $mod+Ctrl+r exec evince
-bindsym $mod+Ctrl+s exec subl
+bindsym $mod+Ctrl+s exec subl3
 
 bindsym $mod+t exec nautilus
 bindsym $mod+Shift+t exec cvlc ~/radiorostova_all.m3u
-bindsym $mod+b exec yandex-browser-beta
+bindsym $mod+b exec google-chrome-stable
 bindsym $mod+g exec gnome-control-center
 #options
 bindsym $mod+Shift+p exec shutdown now
@@ -174,39 +174,40 @@ bindsym $mod+i exec amixer set Master 5%-
 
 
 
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
 exec setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
 exec auto-xflux
-#exec feh --bg-scale "$(find ~/.w/|shuf -n1)"
-exec mplayer -osdlevel 0 -fs -rootwin -loop 0 ~/.w/bg.mp4 
+exec feh --bg-scale "$(find ~/.w/|shuf -n1)"
+#exec mplayer -osdlevel 0 -fs -rootwin -loop 0 ~/.w/bg.mp4 
 
-exec xrandr --output VGA1 --auto --right-of LVDS1
+exec xrandr --output HDMI1 --auto --left-of VGA1
 exec /usr/bin/nm-applet
 exec /usr/bin/volumeicon
 exec alarm-clock
  
 bar {
-	position top
+	position bottom
         #status_command i3status
 	status_command $HOME/.i3/conky-i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 10
+        font pango:DejaVu Sans Mono 18px
         workspace_buttons yes
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-                font pango:DejaVu Sans Mono 10
+                font pango:DejaVu Sans Mono 14
                 font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
-                font pango:Terminus 11px
+                font pango:Terminus 14px
+        font pango:DejaVu Sans Mono 16px
 colors{
 
-        background #454544e
+        background #424542
         #statusline #8cc7d1
         #separator #555555
         #active_workspace #8cc7d1 #fff #8cc7d1
-        focused_workspace  #454544 #8cc7d1 #454544
-       
-        inactive_workspace #8cc7d1 #454544 #8cc7d1
+        focused_workspace   #ffffff #ffffff #2980b9  
+        inactive_workspace #2980b9 #2980b9 #ffffff  
         #urgent_workspace   #2f343a #fff #8cc7d1
 	}
 }
