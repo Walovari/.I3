@@ -11,4 +11,5 @@ echo '[],'
 
 # Now send blocks with information forever:
 #exec conky -c $HOME/.i3/.conky
-exec conky -c $HOME/.i3/conky-job
+exec conky -c $HOME/.i3/conky-dell
+

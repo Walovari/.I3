@@ -191,7 +191,7 @@ exec alarm-clock
 bar {
 	position bottom
         #status_command i3status
-	status_command $HOME/.i3/conky-i3bar
+	status_command $HOME/.i3/sh/conky-i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 18px
         workspace_buttons yes
