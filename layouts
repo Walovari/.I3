@@ -1,2 +1,0 @@
-#/bin/bash
-z=$(xset -q | grep LED | awk -F':' '{ print $4 }' | grep 1); if [ -z $z ]; then echo "en"; else echo "ru"; fi

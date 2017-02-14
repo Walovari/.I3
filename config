@@ -19,7 +19,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -161,8 +161,9 @@ bindsym $mod+Ctrl+r exec evince
 bindsym $mod+Ctrl+s exec subl3
 bindsym $mod+t exec nautilus
 bindsym $mod+b exec google-chrome-stable
-bindsym $mod+g exec gnome-control-center
+bindsym $mod+g exec pavucontrol
 bindsym $mod+Ctrl+l exec i3lock-fancy
+bindsym Caps_Lock exec switch-keys
 #options
 bindsym $mod+Shift+p exec shutdown now
 bindsym $mod+Shift+s exec scrot
@@ -170,6 +171,9 @@ bindsym $mod+Shift+Ctrl+r exec reboot
 bindsym $mod+Shift+Ctrl+o exec curl 192.168.1.200/3214
 bindsym $mod+Shift+Ctrl+1 exec zbs
 bindsym $mod+Shift+Ctrl+2 exec zbs1
+bindsym $mod+Shift+Ctrl+3 exec zbs2
+bindsym $mod+Shift+Ctrl+9 exec pkill chrome
+bindsym $mod+Shift+Ctrl+0 exec feh --bg-scale "$(find ~/.w/|shuf -n1)"
 
 bindsym $mod+u exec amixer set Master 5%+
 bindsym $mod+i exec amixer set Master 5%-
@@ -182,9 +186,13 @@ exec feh --bg-scale "$(find ~/.w/|shuf -n1)"
 exec /usr/bin/nm-applet
 exec /usr/bin/volumeicon
 exec alarm-clock
-
+#exec qbittorrent
+exec xfce4-power-manager
+exec blueman-applet
+exec /usr/bin/workrave
 bar {
 	position bottom
+#  output LVDS1
         #status_command i3status
 	      status_command $HOME/.i3/sh/conky-i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -197,6 +205,7 @@ bar {
         font pango:DejaVu Sans Mono 16px
 colors{
         background #424542
+      #  background rgba(255,255,255,1)
         #statusline #8cc7d1
         #separator #555555
         #active_workspace #8cc7d1 #fff #8cc7d1

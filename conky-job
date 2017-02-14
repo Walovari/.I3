@@ -35,16 +35,15 @@ color1 1abc9c
 TEXT
 # JSON for i3bar
 [
-{"full_text" : "${mem} / ${memmax} ", "color" : "\#27ae60"},
+{"full_text" : "${mem} ", "color" : "\#27ae60"},
 {"full_text" : "${swap}", "color" : "\#8e44ad"},
 {"full_text" : "♬ ${exec amixer get Master -M | egrep -o '[0-9]{2,3}%' | head -1}","color" : "\#d5e0cc"},
-{"full_text" : "${exec uptime -p}", "color" : "\#8cc7d1"},
 {"full_text" : "${exec echo '' }", "color" : "\#16a085" },
 {"full_text" : "${downspeed wlp3s0}", "color" : "\#27ae60"},
 {"full_text" : "${upspeed wlp3s0}", "color" : "\#ffffff"},
 {"full_text" : "${totaldown wlp3s0}", "color" : "\#ffffff"},
-{"full_text" : "${exec sh ~/.i3/layouts}", "color" : "\#8e44ad"},
-{"full_text" : "${exec date '+ %H:%M:%S' }" , "color" : "\#27ae60"},
 {"full_text" : "${exec date '+ %d.%m' }" },
-{"full_text" : "${exec echo 'Работаем дальше' }" }
+{"full_text" : "${exec date '+ %H:%M:%S' }" , "color" : "\#27ae60"},
+{"full_text" : "${font LCDMono:bold:size=12}"},
+{"full_text" : "${exec sh ~/.i3/sh/layouts}", "color" : "\#8e44ad"}
 ],
