@@ -7,7 +7,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 28
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -168,6 +168,8 @@ bindsym Caps_Lock exec switch-keys
 bindsym $mod+Shift+p exec shutdown now
 bindsym $mod+Shift+s exec scrot
 bindsym $mod+Shift+Ctrl+r exec reboot
+bindsym $mod+Shift+Ctrl+p exec phpstorm
+bindsym $mod+Shift+Ctrl+w exec webstorm
 bindsym $mod+Shift+Ctrl+o exec curl 192.168.1.200/3214
 bindsym $mod+Shift+Ctrl+1 exec zbs
 bindsym $mod+Shift+Ctrl+2 exec zbs1
@@ -180,37 +182,30 @@ bindsym $mod+i exec amixer set Master 5%-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-exec setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
-exec auto-xflux
-exec feh --bg-scale "$(find ~/.w/|shuf -n1)"
-exec /usr/bin/nm-applet
-exec /usr/bin/volumeicon
-exec alarm-clock
-#exec qbittorrent
-exec xfce4-power-manager
-exec blueman-applet
-exec /usr/bin/workrave
+exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
+exec --no-startup-id ~/.conky/conky
+exec --no-startup-id auto-xflux
+exec --no-startup-id feh --bg-scale "$(find ~/.w/|shuf -n1)"
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id alarm-clock
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id blueman-applet
+exec --no-startup-id /usr/bin/workrave
 bar {
 	position bottom
 #  output LVDS1
         #status_command i3status
 	      status_command $HOME/.i3/sh/conky-i3bar
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 18px
         workspace_buttons yes
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 14
-        font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
-        font pango:Terminus 14px
-        font pango:DejaVu Sans Mono 16px
+      #  font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+        font pango:Monospace Regular 20px
 colors{
-        background #424542
-      #  background rgba(255,255,255,1)
+        background #0D1130
         #statusline #8cc7d1
         #separator #555555
         #active_workspace #8cc7d1 #fff #8cc7d1
-        focused_workspace   #ffffff #ffffff #2980b9
-        inactive_workspace #2980b9 #2980b9 #ffffff
+        focused_workspace  #B50B1E  #B50B1E #ffffff
+        inactive_workspace  #0D1130   #0D1130 #ffffff
         #urgent_workspace   #2f343a #fff #8cc7d1
 	}
 }
