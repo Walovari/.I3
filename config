@@ -175,7 +175,7 @@ bindsym $mod+Shift+Ctrl+1 exec zbs
 bindsym $mod+Shift+Ctrl+2 exec zbs1
 bindsym $mod+Shift+Ctrl+3 exec zbs2
 bindsym $mod+Shift+Ctrl+9 exec pkill chrome
-bindsym $mod+Shift+Ctrl+0 exec feh --bg-scale "$(find ~/.w/|shuf -n1)"
+bindsym $mod+Shift+Ctrl+0 exec feh --bg-scale $(find ~/.i3/.wallpaper | shuf -n1)
 
 bindsym $mod+u exec amixer set Master 5%+
 bindsym $mod+i exec amixer set Master 5%-
@@ -183,11 +183,11 @@ bindsym $mod+i exec amixer set Master 5%-
 # finds out, if available)
 
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
-exec --no-startup-id conky ~/.conky/conky
+exec --no-startup-id conky -c ~/.i3/conky-desktop
 exec --no-startup-id auto-xflux
-exec --no-startup-id feh --bg-scale "$(find ~/.w/|shuf -n1)"
+exec --no-startup-id feh --bg-scale $(find ~/.i3/.wallpaper | shuf -n1)
 exec --no-startup-id nm-applet
-exec --no-startup-id alarm-clock
+exec --no-startup-id ~/.i3/sh/autostart
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id workrave
