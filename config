@@ -183,21 +183,21 @@ bindsym $mod+i exec amixer set Master 5%-
 # finds out, if available)
 
 exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
-exec --no-startup-id ~/.conky/conky
+exec --no-startup-id conky ~/.conky/conky
 exec --no-startup-id auto-xflux
 exec --no-startup-id feh --bg-scale "$(find ~/.w/|shuf -n1)"
-exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id alarm-clock
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
-exec --no-startup-id /usr/bin/workrave
+exec --no-startup-id workrave
 bar {
 	position bottom
-#  output LVDS1
+	#  output LVDS1
         #status_command i3status
-	      status_command $HOME/.i3/sh/conky-i3bar
+	status_command $HOME/.i3/sh/conky-i3bar
         workspace_buttons yes
-      #  font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	#  font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:Monospace Regular 20px
 colors{
         background #0D1130
