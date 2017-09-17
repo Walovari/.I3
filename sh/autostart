@@ -1,2 +1,2 @@
 #!/bin/sh
- /usr/bin/alarm-clock
+#/usr/bin/alarm-clock

@@ -3,7 +3,6 @@ own_window yes
 out_to_console yes
 background no
 max_text_width 0
-
 # Update interval in seconds
 update_interval 1.0
 
@@ -35,16 +34,17 @@ color1 1abc9c
 # Stuff after 'TEXT' will be formatted on screen
 TEXT
 # JSON for i3bar
+
 [
-{ "full_text" : "Home ${fs_free /home} Free" , "color" : "\#ffffff" },
-{ "full_text" : "RAM ${memperc}%" , "color" : ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
+{ "full_text" : "Home ${fs_free /home}" , "color" : "\#ecf0f1" },
+{ "full_text" : "RAM ${memperc}%" , "color" : ${if_match ${memperc}<80}"\#ecf0f1"${else}"\#c0392b"${endif} },
 {"full_text" : "${mem} ", "color" : "\#27ae60"},
 {"full_text" : "${swap}", "color" : "\#8e44ad"},
-{"full_text" : "♬ ${exec amixer get Master -M | egrep -o '[0-9]{2,3}%' | head -1}","color" : "\#d5e0cc"},
+{"full_text" : "♬ ${exec amixer get Master -M | egrep -o '[0-9]{1,3}%' | head -1}","color" : "\#d5e0cc"},
 {"full_text" : "${exec echo '' }", "color" : "\#16a085" },
 {"full_text" : "${downspeed wlp3s0}", "color" : "\#27ae60"},
-{"full_text" : "${upspeed wlp3s0}", "color" : "\#ffffff"},
-{"full_text" : "${totaldown wlp3s0}", "color" : "\#ffffff"},
+{"full_text" : "${upspeed wlp3s0}", "color" : "\#ecf0f1"},
+{"full_text" : "${totaldown wlp3s0}", "color" : "\#ecf0f1"},
 {"full_text" : "${exec date '+ %H:%M:%S' }" , "color" : "\#27ae60"},
 {"full_text" : "${exec date '+ %d.%m' }" },
 {"full_text" : "${exec sh ~/.i3/sh/layouts}", "color" : "\#8e44ad"}
